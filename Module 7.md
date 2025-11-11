@@ -1,13 +1,14 @@
 EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
-
+## Name:Naneshvaran C
+## Reg.no:212224110038
 Aim:
-To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
+To write a C program for array of structure to check eligibility for the vaccine person age above 18 years of age.
 
 Algorithm:
 1.	Declare structure eligible with age (integer) and n (character array)
 2.	Declare variable e of type eligible
 3.	Input age and name using scanf, store in e
-4.	If e.age <= 6
+4.	If e.age <= 18
 -	Print "Vaccine Eligibility: No"
 Else
 -	Print "Vaccine Eligibility: Yes"
@@ -15,13 +16,38 @@ Else
 6.	Return 0
  
 Program:
+```
+#include<stdio.h>
+struct vaccine
+{
+    int age;
+    char name[100];
+    
+}i;
 
-//type your code here
+int main()
+{
+ 
+    scanf("%d",&i.age);
+    printf("Age:%d\n",i.age);
+    scanf("%s",i.name);
+    printf("Name:%s",i.name);
+    printf("vaccine:%d\n",i.age); 
+    if(i.age>18)
+    {  
+        printf("eligibility:yes");
+    }
+    else
+    {
+        printf("eligibility:no");
+    }
+} 
+```
 
 
 Output:
 
-//paste your output here
+<img width="1152" height="834" alt="image" src="https://github.com/user-attachments/assets/20e95ecd-bf18-4fba-9d6a-718c264f61be" />
 
 
 Result:
@@ -43,18 +69,36 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+// Define the structure
+struct Distance {
+    int feet;
+} d1, d2, dist, *result;
 
+void addDistance(struct Distance *d1, struct Distance *d2, struct Distance *res) {
+    res->feet = d1->feet + d2->feet;
+}
 
+int main() {
+    result = &dist;
 
+    scanf("%d", &d1.feet);
+
+    scanf("%d", &d2.feet);
+
+    addDistance(&d1, &d2, result);
+
+    printf("Sum of distances = %d'\n", result->feet);
+
+    return 0;
+}
+
+```
 
 Output:
-
-
-//paste your output here
-
-
+<img width="1206" height="838" alt="image" src="https://github.com/user-attachments/assets/d82e9148-9b30-4434-82bb-e780dd1ede47" />
 
 
 Result:
@@ -85,26 +129,38 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
-
-
-
+```
+#include <stdio.h>
+struct student
+{
+    int id;
+    char name[20];
+    char dept[20];
+}s;
+int main()
+{
+    FILE *fp;
+    int count;
+    scanf("%d",&count);
+    fp=fopen("library.txt" ,"w");
+    for (int i=0;i<count;i++)
+    {
+        scanf("%d",&s.id);
+        scanf("%s",s.name);
+        scanf("%s",s.dept);
+        printf("%d ",s.id);
+        printf("%s ",s.name);
+        printf("%s \n",s.dept);
+        fp=fopen("library.txt" ,"a");
+    }
+    printf("Data Read Successfully\n");
+    fclose(fp);
+}
+}
+```
 
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
+<img width="1225" height="897" alt="image" src="https://github.com/user-attachments/assets/9df7e7b8-00a1-4613-a992-5fb2b89df92e" />
 
 Result:
 Thus, the program is verified successfully
@@ -132,20 +188,31 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
-
-
-
+```
+#include <stdio.h>
+int main()
+{
+    FILE *fp;
+    char file_name[20];
+    int count;
+    float val;
+    scanf("%s",file_name);
+    scanf("%d",&count);
+    fp=fopen(file_name,"w");
+    for (int i=0;i<=count;i++)
+    {
+        scanf("%f",&val);
+        fp=fopen(file_name,"a");
+    }
+    printf("%s Opened\n",file_name);
+    printf("Data added Successfully\n");
+    fclose(fp);
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
+<img width="982" height="929" alt="image" src="https://github.com/user-attachments/assets/c2ac194c-9cb1-433e-9411-c45243f732bc" />
 
 
 Result:
@@ -186,21 +253,49 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Subject {
+    char name[50];
+    int marks;
+};
 
+int main() {
+    int n, i;
+    struct Subject *subjects;
 
+    printf("Enter number of subjects: ");
+    scanf("%d", &n);
 
+    subjects = (struct Subject *)malloc(n * sizeof(struct Subject));
+    if (subjects == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    for(i = 0; i < n; i++) {
+        printf("\nEnter name of subject %d: ", i + 1);
+        scanf(" %[^\n]s", subjects[i].name);
+        printf("Enter marks for %s: ", subjects[i].name);
+        scanf("%d", &subjects[i].marks);
+    }
+
+    printf("\nSubject Details:\n");
+    for(i = 0; i < n; i++) {
+        printf("Subject: %s, Marks: %d\n", subjects[i].name, subjects[i].marks);
+    }
+
+    free(subjects);
+
+    return 0;
+}
+```
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
+<img width="1528" height="710" alt="image" src="https://github.com/user-attachments/assets/ea7bd992-7d1d-4b2d-bd31-c472df5004fc" />
 
 Result:
 Thus, the program is verified successfully
